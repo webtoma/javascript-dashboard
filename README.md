@@ -3,8 +3,8 @@
 ### Objectif
 - L'objectif de cet exercice est de développer un dashboard interactif permettant de suivre la qualité de l'air dans différentes villes du monde, en utilisant des données récupérées via une API et affichées graphiquement à l’aide de ChartsJS.
 
-### Contexte
-- La qualité de l'air est un enjeu crucial pour l'environnement et la santé publique. Avoir accès à des données précises et en temps réel permet d’adopter des comportements plus respectueux et informés vis-à-vis de notre environnement.
+- Partie de gauche : une map `leaflet` qui affiche Paris.
+- Partie de droite : un chart `chartsjs` au format `line` qui affiche le taux de CO sur les derniers jours.
 
 ## Étapes Importantes
 ### 1. Exploration de l'API
@@ -21,11 +21,10 @@
 ### 5. Création des Graphiques avec ChartsJS
 - Créez des graphiques (barres, lignes, etc.) pour représenter visuellement les données de qualité de l’air.
 - Assurez-vous que les graphiques sont lisibles et informatifs.
-### 6. Dynamisation du Dashboard
-- Ajoutez des interactions utilisateur (choix de la ville, plage de dates, etc.).
-Mettez à jour dynamiquement les graphiques en fonction des interactions utilisateur.
-### 7. Responsive Design
-- Assurez-vous que le tableau de bord est responsive et s’adapte aux différentes tailles d'écran.
+### 6. Affichage de la map
+- Affichez la map dans la div#map correspondante grâce au plugin `leaflet`
+### 7. Click sur la map et actualisation
+- Lorsque vous cliquez sur la map, vous devez récupérer la `latitude` et la `longitude` et relancer le calcul de votre `chartsjs`.
 ### 8. Test de l'Application
 - Testez votre application sur différents navigateurs et appareils.
 Corrigez les éventuels bugs et optimisez les performances si nécessaire.
@@ -36,7 +35,8 @@ Corrigez les éventuels bugs et optimisez les performances si nécessaire.
 
 ## Ressources Externes
 - [ChartsJS Documentation](https://www.chartjs.org/docs/latest/)
-- [OpenAQ API Documentation](https://docs.openaq.org/)
+- [Leaflet Documentation](https://leafletjs.com/reference.html)
+- [OpenWeather API Documentation](https://openweathermap.org/api/air-pollution)
 - [Axios Documentation](https://axios-http.com/docs/intro)
 - [MDN Web Docs](https://developer.mozilla.org/)
 
