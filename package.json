@@ -1,0 +1,11 @@
+{
+  "name": "javascript-dashboard",
+  "version": "1.0.0",
+  "description": "- L'objectif de cet exercice est de développer un dashboard interactif permettant de suivre la qualité de l'air dans différentes villes du monde, en utilisant des données récupérées via une API et affichées graphiquement à l’aide de ChartsJS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
