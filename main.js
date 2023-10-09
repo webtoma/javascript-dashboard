@@ -21,7 +21,7 @@ fetch('https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=50&lon
         coArray.push(pollution[i].components.co)
         timeArray.push(timeConverter(pollution[i].dt))
     }
-     console.log(coArray)
+    console.log(coArray)
     const coArrayLength = coArray.length
 
       let data = {
