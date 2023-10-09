@@ -1,37 +1,19 @@
-# Exercice: Suivi de la Qualité de l'Air avec un Dashboard Dynamique
+# Exercice: Suivi de la Qualité de l'Air avec un Dashboard Dynamique et un Backend
 ## Présentation de l'exercice
 ### Objectif
-- L'objectif de cet exercice est de développer un dashboard interactif permettant de suivre la qualité de l'air dans différentes villes du monde, en utilisant des données récupérées via une API et affichées graphiquement à l’aide de ChartsJS.
-
-- Partie de gauche : une map `leaflet` qui affiche Paris.
-- Partie de droite : un chart `chartsjs` au format `line` qui affiche le taux de CO sur les derniers jours.
+- L'objectif de cet exercice est de développer un dashboard interactif incluant :
+    - Une partie frontend qui récupère de la data via différentes API et l'affiche dans des charts
+    - Une partie backend qui nous servira à sauvegarder de la data sur une base de données prévue à cet effet.
 
 ## Étapes Importantes
-### 1. Exploration de l'API
-- Choisissez et explorez une API fournissant des données sur la qualité de l'air (par exemple, OpenAQ).
-- Familiarisez-vous avec les endpoints, les paramètres et les données retournées.
-### 2. Planification de l'UI/UX
-- Ébauchez le design de votre dashboard.
-- Identifiez les informations clés à afficher et comment les présenter visuellement.
-### 3. Configuration de l'Environnement de Développement
-- Mettez en place votre environnement de développement (éditeur de texte, navigateur, terminal, etc.).
-- Initialisez un projet avec npm ou yarn, et installez les dépendances nécessaires (ChartsJS, Axios, etc.).
-### 4. Récupération des Données
-- Utilisez Axios ou Fetch pour récupérer les données de l'API et traitez-les pour les adapter à vos besoins.
-### 5. Création des Graphiques avec ChartsJS
-- Créez des graphiques (barres, lignes, etc.) pour représenter visuellement les données de qualité de l’air.
-- Assurez-vous que les graphiques sont lisibles et informatifs.
-### 6. Affichage de la map
-- Affichez la map dans la div#map correspondante grâce au plugin `leaflet`
-### 7. Click sur la map et actualisation
-- Lorsque vous cliquez sur la map, vous devez récupérer la `latitude` et la `longitude` et relancer le calcul de votre `chartsjs`.
-### 8. Test de l'Application
-- Testez votre application sur différents navigateurs et appareils.
-Corrigez les éventuels bugs et optimisez les performances si nécessaire.
-### 9. Documentation du Code
-- Commentez votre code de manière claire et concise pour faciliter la compréhension et la maintenance.
-### 10. Déploiement
-- Déployez votre application sur une plateforme de votre choix (Vercel, Netlify, GitHub Pages, etc.) et assurez-vous qu'elle fonctionne correctement en production.
+### 1. Partie Frontend
+- Développez dans un premier temps les éléments de manière à ce que tout fonctionne correctement en ouvrant l'`index.html`
+
+
+### 2. Partie Backend
+- Installez Strapi
+- Lancez le via la console et connectez-vous en mode administrateur
+- Commencez à entrer des contenus dans l'interface.
 
 ## Ressources Externes
 - [ChartsJS Documentation](https://www.chartjs.org/docs/latest/)
