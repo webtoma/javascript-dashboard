@@ -12,7 +12,7 @@ function timeConverter(UNIX_timestamp){
     let time = date + '/' + month + '/' + year + ' - ' + hour + 'h';
     return time;
 }
-function createCoChart(lat, lon){
+function createCoChart(lat, lon, gaz){
     fetch('https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat='+lat+'&lon='+lon+'&appid=654fe30faf595ab977787808c42965c6')
     .then(response => response.json())
     .then(response => {
@@ -21,7 +21,20 @@ function createCoChart(lat, lon){
         let coArray = [];
         let timeArray = [];
         for(i=0; i<tableauLength; i++){
-            coArray.push(pollution[i].components.co)
+            if(gaz == 'co'){
+                coArray.push(pollution[i].components.co)
+            }else if(gaz == 'no'){
+                coArray.push(pollution[i].components.no)
+            }else if(gaz == 'no2'){
+                coArray.push(pollution[i].components.no2)
+            }else if(gaz == 'o3'){
+                coArray.push(pollution[i].components.o3)
+            }else if(gaz == 'so2'){
+                coArray.push(pollution[i].components.so2)
+            }else if(gaz == 'pm10'){
+                coArray.push(pollution[i].components.pm10)
+            }
+
             timeArray.push(timeConverter(pollution[i].dt))
         }
         console.log(coArray)
@@ -30,7 +43,7 @@ function createCoChart(lat, lon){
         let data = {
             labels: timeArray,
             datasets: [{
-            label: "CO in Air",
+            label: gaz + " in Air",
             backgroundColor: "rgba(255,99,132,0.2)",
             borderColor: "rgba(255,99,132,1)",
             borderWidth: 2,
@@ -72,8 +85,6 @@ function createCoChart(lat, lon){
                 data: data
             });
           }
-        
-        
     })
 }
 function initMap() {
@@ -89,8 +100,8 @@ function initMap() {
 }
 
 window.onload = function(){
-    createCoChart(lat, lon);
-    initMap(); 
+    createCoChart(lat, lon, 'co');
+    initMap();
     macarte.on('click', (event)=> {
         macarte.eachLayer(function (layer) {
             if (layer instanceof L.Marker) {
@@ -99,6 +110,18 @@ window.onload = function(){
         });
         L.marker([event.latlng.lat , event.latlng.lng]).addTo(macarte);
         chart.destroy();
-        createCoChart(event.latlng.lat, event.latlng.lng);
+        let selectedGaz = document.getElementById('pollution').value;
+        createCoChart(event.latlng.lat, event.latlng.lng, selectedGaz);
     })
 };
+
+
+
+let myForm = document.getElementById('pollutionForm');
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    //get value from the selected option
+    let selectedGaz = document.getElementById('pollution').value;
+    createCoChart(lat, lon, selectedGaz);
+})
+
